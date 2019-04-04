@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "view_eye", "view_eye\view_eye.csproj", "{4A9F990D-6628-483D-BF3E-2152D30B4C3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A9F990D-6628-483D-BF3E-2152D30B4C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A9F990D-6628-483D-BF3E-2152D30B4C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A9F990D-6628-483D-BF3E-2152D30B4C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A9F990D-6628-483D-BF3E-2152D30B4C3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CCE9E62-DDC2-42F7-AA81-F204EC809C95}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,543 @@
+﻿@model IEnumerable<view_eye.Models.Patients>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberofSpling)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameOfaSpling)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thechildorder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Placeofresidence)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fatheroccupation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Educationalqualification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Home_number_Fa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile_Fa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mother_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherWork)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EducationMother)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Home_number_Mo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile_Mo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Referral_source)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Where_Live_Child)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name_Live_chiled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sponsored_Child)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RelatedOfFamily)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Describe_Relationship)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TheSameInFamily)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RelationShip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parental_complaint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pregnancy_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiseasesduringPregnancy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InfectioOrVirus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeOfVirus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Abdominal_Injury)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Exposed_Radiation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Take_Drugs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name_Drugs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Smoke)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type_Smoke)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Natural_Birth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Birth_Difficult)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tools_Birth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Problems_Child_OX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Child_Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Incubator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReasonN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diseases_Chlid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Congenital)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Breastfeeded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reasonbreastfeeded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAUral)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OfReason)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Swallowing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Directtrauma)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Acute)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type_Acute)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Drugs_Child)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usage_Drug)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surgery)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Typesurgery)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hearing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Problemshearing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Audiologist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Eyesight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Problemseyesight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ophthalmologist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Problemmovement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Startsitting)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Startwalking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Physicaltherapy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seizures)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dco_Seizures)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Word_Spoken)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Regular_Sessions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Child_Communicate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Communicate_Any_One)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Simple_Orders)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Speak_Simple_Word)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Number_Words)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Speak_Word)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name_Doctr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name_Speech)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Favorite_Activity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Favorite_Games)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.More_Information)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Add)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirthDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nationality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberofSpling)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameOfaSpling)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Thechildorder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Placeofresidence)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fatheroccupation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Educationalqualification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Home_number_Fa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile_Fa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mother_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherWork)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EducationMother)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Home_number_Mo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile_Mo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Referral_source)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Where_Live_Child)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name_Live_chiled)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sponsored_Child)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RelatedOfFamily)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Describe_Relationship)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TheSameInFamily)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RelationShip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Parental_complaint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pregnancy_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiseasesduringPregnancy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InfectioOrVirus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeOfVirus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Abdominal_Injury)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Exposed_Radiation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Take_Drugs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name_Drugs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Smoke)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type_Smoke)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Natural_Birth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Birth_Difficult)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tools_Birth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Problems_Child_OX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Child_Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Incubator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReasonN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diseases_Chlid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Congenital)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Breastfeeded)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reasonbreastfeeded)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAUral)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OfReason)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Swallowing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Directtrauma)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acute)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type_Acute)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Drugs_Child)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usage_Drug)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Surgery)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Typesurgery)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hearing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Problemshearing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Audiologist)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eyesight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Problemseyesight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ophthalmologist)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Movement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Problemmovement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Startsitting)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Startwalking)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Physicaltherapy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Seizures)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dco_Seizures)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Word_Spoken)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Regular_Sessions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Child_Communicate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Communicate_Any_One)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Simple_Orders)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Speak_Simple_Word)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number_Words)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Speak_Word)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name_Doctr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name_Speech)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Favorite_Activity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Favorite_Games)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.More_Information)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_Add)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

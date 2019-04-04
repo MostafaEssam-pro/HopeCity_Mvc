@@ -1,0 +1,42 @@
+﻿@model view_eye.Models.Test
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Test</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Doctors_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doctors_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patients_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patients_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnswersId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnswersId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

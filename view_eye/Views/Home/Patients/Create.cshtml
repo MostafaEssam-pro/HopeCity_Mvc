@@ -1,0 +1,937 @@
+﻿@model view_eye.Models.Patients
+
+@{
+ViewBag.Title = "Create";
+}
+
+
+<script>
+$(function () {
+$("#accordion").accordion();
+});
+</script>
+
+<style>
+
+.form-group {
+direction: rtl;
+}
+
+.form-control {
+border-color: #80bdff;
+}
+
+.col-form-label {
+text-align: right;
+}
+</style>
+
+
+
+<form method="post" action="Create">
+
+    <div class="form-horizontal ">
+
+
+
+
+
+        <div id="myform">
+
+
+
+
+
+
+            <div id="accordion">
+                <h3> البيانات الاساسيه للطفل </h3>
+                <div>
+
+
+
+
+                    <div class="form-group row ">
+                        <label for="FullName" class="col-md-2 col-form-label">الاسم الثلاثي<span class="color-red1"> * </span></label>
+                        <div class="col-sm-3">
+
+                            <input type="text" class="form-control" name="FullName" id="FullName" placeholder="برجاء ادجال اسم " required>
+                            @Html.ValidationMessage("FullName")
+                        </div>
+
+
+
+                        <label for="Gender" class="col-md-2 col-form-label">النوع<span class="color-red1"> * </span>  </label>
+                        <div class="col-sm-3 m-l">
+
+                            <select id="Gender" class="form-control" name="Gender">
+                                <option value=''>اختيار النوع</option>
+                                <option value="mal">ذكر</option>
+                                <option value="female">انثي</option>
+                            </select>
+                            @Html.ValidationMessage("Gender")
+
+                        </div>
+
+
+                        <label for="BirthDate" class="col-md-2 col-form-label">تاريخ الميلاد<span class="color-red1"> * </span></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control datepickerDOBUY" name="BirthDate" id="BirthDate" placeholder="تاريخ الميلاد" required>
+                        </div>
+
+
+                        <label for="Age" class="col-md-2 col-form-label">السن<span class="color-red1"> * </span> </label>
+                        <div class="col-sm-3 m-l">
+                            <input type="text" class="form-control" id="age" name="age" placeholder=" السن" required readonly>
+                        </div>
+
+                        <label for="inputEmail3" class="col-md-2 col-form-label">تاريخ الاختبار<span class="color-red1"> * </span></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control nowdate " id="Date" name="Date" placeholder="تاريخ اليوم" required>
+                        </div>
+
+
+                        <label for="Nationality" class="col-md-2 col-form-label">الجنسيه<span class="color-red1"> * </span> </label>
+                        <div class="col-sm-3  m-l">
+                            <input type="text" class="form-control " id="Nationality" name="Nationality" placeholder=" الجنسيه" required>
+                        </div>
+
+
+                        <label for="NumberofSpling" class="col-md-2 col-form-label">عدد الاخوة </label>
+                        <div class="col-sm-3 ">
+                            <input type="number" class="form-control" id="NumberofSpling" name="NumberofSpling" placeholder=" عدد الاخوة">
+                        </div>
+
+
+
+
+                        <label for="NameOfaSpling" class="col-md-2 col-form-label">اسماء الاخوة<span class="color-red1"> * </span>  </label>
+                        <div class="col-sm-3 m-l">
+                            <input type="text" class="form-control " id="NameOfaSpling" name="NameOfaSpling" placeholder="  اسماء الاخوة">
+                        </div>
+
+
+
+                        <label for="Thechildorder" class="col-md-2 col-form-label"> موقع الطفل بين اخواتة<span class="color-red1"> * </span>  </label>
+                        <div class="col-sm-3 ">
+                            <input type="text" class="form-control " id="Thechildorder" name="Thechildorder" placeholder="موقع الطفل بين اخواتة">
+                        </div>
+
+
+
+                        <label for="Placeofresidence" class="col-md-2 col-form-label">محل الاقامة>   </label>
+                        <div class="col-sm-3 m-l">
+                            <input type="text" class="form-control " id="Placeofresidence" name="Placeofresidence" placeholder=" محل الاقامة ">
+                        </div>
+
+
+                        <label for="Fatheroccupation" class="col-md-2 col-form-label">وظيفة الاب </label>
+                        <div class="col-sm-3 ">
+                            <input type="text" class="form-control" id="Fatheroccupation" name="Fatheroccupation" placeholder=" وظيفة الاب ">
+                        </div>
+
+                        <label for="Educationalqualification" class="col-md-2 col-form-label"> المؤهل الدراسي </label>
+                        <div class="col-sm-3 m-l">
+                            <input type="text" class="form-control " id="Educationalqualification" name="Educationalqualification" placeholder="  المؤهل الدراسي ">
+                        </div>
+
+
+                        <label for="Home_number_Fa" class="col-md-2 col-form-label"> رقم تليفون المنزل </label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control " id="Home_number_Fa" name="Home_number_Fa" placeholder="رقم تليفون المنزل ">
+                        </div>
+                        <label for="Mobile_Fa" class="col-md-2 col-form-label"> رقم الموبايل </label>
+                        <div class="col-sm-3 m-l">
+                            <input type="text" class="form-control " id="Mobile_Fa" name="Mobile_Fa" placeholder=" رقم الموبايل ">
+                        </div>
+
+
+                        <label for="Mother_name" class="col-md-2 col-form-label"> اسم الام </label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control " id="Mother_name" name="Mother_name" placeholder="اسم الام ">
+                        </div>
+                        <label for="MotherWork" class="col-md-2 col-form-label">  وظيفه الام </label>
+                        <div class="col-sm-3 m-l">
+                            <input type="text" class="form-control " id="MotherWork" name="MotherWork" placeholder="  وظيفه الام ">
+                        </div>
+
+
+                        <label for="EducationMother" class="col-md-2 col-form-label"> المؤهل الدراسي </label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control " id="EducationMother" name="EducationMother" placeholder="المؤهل الدراسي ">
+                        </div>
+                        <label for="Home_number_Mo" class="col-md-2 col-form-label">  رقم تليفون المنزل </label>
+                        <div class="col-sm-3 m-l">
+                            <input type="text" class="form-control " id="Home_number_Mo" name="Home_number_Mo" placeholder=" رقم تليفون المنزل ">
+                        </div>
+
+
+                        <label for="Mobile_Mo" class="col-md-2 col-form-label"> رقم الموبايل </label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control " id="Mobile_Mo" name="Mobile_Mo" placeholder="رقم الموبايل ">
+                        </div>
+
+
+                        <label for="Referral_source" class="col-md-2 col-form-label">  مصدر الحالة </label>
+                        <div class="col-sm-3 m-l">
+                            <input type="text" class="form-control " id="Referral_source" name="Referral_source" placeholder=" مصدر الحالة ">
+                        </div>
+
+
+                        <label for="Where_Live_Child" class="col-md-2 col-form-label">مع من يقيم الطفل<span class="color-red1"> * </span>  </label>
+                        <div class="col-sm-3 ">
+
+                            <select id="inputState_home" class="form-control" name="select_gander">
+                                <option value=''>اختيار المقيم</option>
+                                <option value="father">الاب</option>
+                                <option value="Father_Mother">الام</option>
+                                <option value="female">الاب و الام</option>
+                                <option value="others"> اخرون </option>
+                            </select>
+
+                        </div>
+
+
+                        <label for="Name_Live_chiled" class="col-md-2 col-form-label">   المقيم </label>
+                        <div class="col-sm-3 m-l">
+                            <input type="text" class="form-control " readonly id="head_home" name="Name_Live_chiled" placeholder="  المقيم ">
+                        </div>
+
+
+
+                        <label for="Sponsored_Child" class="col-md-2 col-form-label">   من القائم برعايه الطفل </label>
+                        <div class="col-sm-3 m-l" style="margin-left:500px">
+                            <input type="text" class="form-control " id="Sponsored_Child" name="Sponsored_Child" placeholder="  من القائم برعايه الطفل ">
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+
+                        <div class="form-group col-md-5" style="margin-bottom:0">
+                            <label>هل توجد صلة قرابة بين الاب و الام؟   </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="RelatedOfFamily" name="RelatedOfFamily" value="true" class="custom-control-input">
+                                <label class="custom-control-label" for="RelatedOfFamily">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="RelatedOfFamily1" name="RelatedOfFamily" value="false" class="custom-control-input">
+                                <label class="custom-control-label" for="RelatedOfFamily1">لا</label>
+                            </div>
+                        </div>
+                        <div class=" form-group col-md-5" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="Describe_Relationship" name="Describe_Relationship" placeholder="  اوصف صلة القرابة ">
+
+
+                        </div>
+
+
+
+
+
+                        <div class="form-group col-md-5" style="margin-bottom:0">
+                            <label>هل توجد حالات مشابهة في الاسرة؟  </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="TheSameInFamily" name="TheSameInFamily" value="true" class="custom-control-input">
+                                <label class="custom-control-label" for="TheSameInFamily">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="TheSameInFamily1" name="TheSameInFamily" value="false" class="custom-control-input">
+                                <label class="custom-control-label" for="TheSameInFamily1">لا</label>
+                            </div>
+                        </div>
+                        <div class=" form-group col-md-5 m-l" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="RelationShip" name="RelationShip" placeholder=" ان كانت الاجابة بنعم فما درجه القرابة ؟ ">
+
+
+                        </div>
+
+                        <label for="Parental_complaint" class="col-md-2 col-form-label"> شكوي الاهل </label>
+                        <div class="col-sm-8 m">
+<textarea class="form-control" id="Parental_complaint" name="Parental_complaint" role="2" rows="4" placeholder="  شكوي الاهل "></textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+                <h3>بيانات عن الحمل </h3>
+                <div class="style=" height:auto">
+
+                    <div class="form-row">
+
+
+                        <div class="form-group col-md-6">
+                            <label>ماهي مدة الحمل ؟</label>
+                            <input type="number" class="form-control" id="Pregnancy_Time" name="Pregnancy_Time" placeholder="ماهي مدة الحمل">
+
+
+                        </div>
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+
+                            <label>هل كانت الام تعاني من اي امراض اثناء الحمل </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="DiseasesduringPregnancy" value="true" name="DiseasesduringPregnancy" class="custom-control-input">
+                                <label class="custom-control-label" for="DiseasesduringPregnancy">نعم</label>
+                            </div>
+
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="DiseasesduringPregnancy1" value="false" name="DiseasesduringPregnancy" class="custom-control-input">
+                                <label class="custom-control-label" for="DiseasesduringPregnancy1">لا</label>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل اصيبت الام باي عدوي اوفيروس الانفلونز-الهريس-الحصبة -الخ </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="InfectioOrVirus" value="true" name="InfectioOrVirus" class="custom-control-input">
+                                <label class="custom-control-label" for="InfectioOrVirus">نعم</label>
+                            </div>
+
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="InfectioOrVirus1" value="false" name="InfectioOrVirus" class="custom-control-input">
+                                <label class="custom-control-label" for="InfectioOrVirus1">لا</label>
+                            </div>
+                        </div>
+
+
+                        <div class=" form-group col-md-5" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="TypeOfVirus" name="TypeOfVirus" placeholder="  ان كانت الاجابه فما نوع هذه العدوي او الفيروس ؟">
+
+
+                        </div>
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل اصيبت الام باي اصابه مباشره في البطن ؟ </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Abdominal_Injury" name="Abdominal_Injury" value="true" class="custom-control-input">
+                                <label class="custom-control-label" for="Abdominal_Injury">نعم</label>
+                            </div>
+
+
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Abdominal_Injury1" name="Abdominal_Injury" value="false" class="custom-control-input">
+                                <label class="custom-control-label" for="Abdominal_Injury1">لا</label>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل تعرضت الام للاشعاع ؟ </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Exposed_Radiation" value="true" name="Exposed_Radiation" class="custom-control-input">
+                                <label class="custom-control-label" for="Exposed_Radiation">نعم</label>
+                            </div>
+
+
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Exposed_Radiation1" value="false" name="Exposed_Radiation" class="custom-control-input">
+                                <label class="custom-control-label" for="Exposed_Radiation1">لا</label>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل تعاطت الام اي عقاير ؟ </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Take_Drugs" value="true" name="Take_Drugs" class="custom-control-input">
+                                <label class="custom-control-label" for="Take_Drugs">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Take_Drugs1" value="false" name="Take_Drugs" class="custom-control-input">
+                                <label class="custom-control-label" for="Take_Drugs1">لا</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="Name_Drugs" name="Name_Drugs" placeholder=" اذا الاجابه بعم فما اسم العقار؟ وما السبب تناوله ؟ وما مدة تناولة">
+
+
+                        </div>
+
+
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل كانت الام تدخن او تتعاطي اي نوع من المكيفات ؟ </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Smoke" value="true" name="Smoke" class="custom-control-input">
+                                <label class="custom-control-label" for="Smoke">نعم</label>
+                            </div>
+
+
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Smoke1" value="false" name="Smoke" class="custom-control-input">
+                                <label class="custom-control-label" for="Smoke1">لا</label>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="Type_Smoke" name="Type_Smoke" placeholder=" اذا كانت الاجابه نعم فما هو نوع هذه المكيفات؟">
+
+
+                        </div>
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل كانت الولاده طبيعية ؟</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Natural_Birth" value="true" name="Natural_Birth" class="custom-control-input">
+                                <label class="custom-control-label" for="Natural_Birth">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Natural_Birth1" value="false" name="Natural_Birth" class="custom-control-input">
+                                <label class="custom-control-label" for="Natural_Birth1">لا</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل كانت الولادة متعثرة ؟ </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Birth_Difficult" value="true" name="Birth_Difficult" class="custom-control-input">
+                                <label class="custom-control-label" for="Birth_Difficult">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Birth_Difficult1" value="false" name="Birth_Difficult" class="custom-control-input">
+                                <label class="custom-control-label" for="Birth_Difficult1">لا</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل تم استخدم ادوات مثل الجفت الشفاط اثناء الولادة ؟  </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Tools_Birth" value="true" name="Tools_Birth" class="custom-control-input">
+                                <label class="custom-control-label" for="Tools_Birth">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Tools_Birth" value="false" name="Tools_Birth" class="custom-control-input">
+                                <label class="custom-control-label" for="Tools_Birth">لا</label>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل عاني الطفل من اي مشاكل في التنفس او نقص الاكسجين ؟ </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Problems_Child_OX" value="true" name="Problems_Child_OX" class="custom-control-input">
+                                <label class="custom-control-label" for="Problems_Child_OX">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Problems_Child_OX" value="false" name="Problems_Child_OX" class="custom-control-input">
+                                <label class="custom-control-label" for="Problems_Child_OX">لا</label>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-md-6" style="margin-bottom:2px">
+                            <label>ما هو وزن الطفل عند الولادة؟</label>
+                        </div>
+
+                        <div class="form-group col-md-4" style="margin-bottom:2px">
+
+                            <input type="number" class="form-control" id="Child_Weight" name="Child_Weight" placeholder="وزن الطفل ">
+
+
+                        </div>
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل تم وضع الطفل في حضانة بعد الولادة ؟ </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Incubator" value="true" name="Incubator" class="custom-control-input">
+                                <label class="custom-control-label" for="Incubator">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Incubator" value="false" name="Incubator" class="custom-control-input">
+                                <label class="custom-control-label" for="Incubator">لا</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="ReasonN" name="ReasonN" placeholder="   اذا كانت الاجابة بعم فما سبب وضعة في حضانة؟ وما المدة ؟">
+
+
+                        </div>
+
+
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل يعاني الطفل من اي امراض او عيوب خلقية </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Diseases_Chlid" value="true" name="Diseases_Chlid" class="custom-control-input">
+                                <label class="custom-control-label" for="Diseases_Chlid">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Diseases_Chlid" value="false" name="Diseases_Chlid" class="custom-control-input">
+                                <label class="custom-control-label" for="Diseases_Chlid">لا</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="Congenital" name="Congenital" placeholder="  اذا كانت الاجابة بعم فما هي هذة الامراض والعيوب الخلقية ؟">
+
+                        </div>
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل اصيب الطفل بالصفراء ؟ </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Breastfeeded" value="true" name="Breastfeeded" class="custom-control-input">
+                                <label class="custom-control-label" for="28">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Breastfeeded" value="false" name="Breastfeeded" class="custom-control-input">
+                                <label class="custom-control-label" for="Breastfeeded">لا</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="Reasonbreastfeeded" name="Reasonbreastfeeded" placeholder="    اذا كانت الاجابة بعم فما هي درجتها ؟">
+
+
+                        </div>
+
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل كانت رضاعة الطفل طبيعية </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="NAUral" value="true" name="NAUral" class="custom-control-input">
+                                <label class="custom-control-label" for="NAUral">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="NAUral" value="false" name="31" class="custom-control-input">
+                                <label class="custom-control-label" for="NAUral">لا</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="OfReason" name="OfReason" placeholder="اذا كانت الاجابة لا فما السبب">
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3>الامراض والمشاكل الصحية</h3>
+                <div>
+                    <div class="form-row">
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل يعاني الطفل من صعوبة في البلع ؟</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Swallowing" value="true" name="Swallowing" class="custom-control-input">
+                                <label class="custom-control-label" for="Swallowing">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Swallowing" value="false" name="Swallowing" class="custom-control-input">
+                                <label class="custom-control-label" for="Swallowing">لا</label>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل اصيب الطفل باي اصابة  ؟</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Directtrauma" value="true" name="Directtrauma" class="custom-control-input">
+                                <label class="custom-control-label" for="Directtrauma">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Directtrauma" value="false" name="Directtrauma" class="custom-control-input">
+                                <label class="custom-control-label" for="Directtrauma">لا</label>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل اصيب الطفل باي عدوي حادة ؟</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Acute"  value="true" name="Acute" class="custom-control-input">
+                                <label class="custom-control-label" for="Acute">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Acute" v name="Acute" class="custom-control-input">
+                                <label class="custom-control-label" for="Acute">لا</label>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder="    اذا كانت الاجابة نعم فما هو نوع العدوي ؟ وما سن الطفل في هذه الفتره">
+
+
+                        </div>
+
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل تناول الطفل اي عقاقير ؟ </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="39" name="39" class="custom-control-input">
+                                <label class="custom-control-label" for="39">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="40" name="39" class="custom-control-input">
+                                <label class="custom-control-label" for="40">لا</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder=" اذا كانت الاجابة نعم فما هو نوع العقار ؟ وما سبب تناولة ؟ وما المدة ؟">
+
+
+                        </div>
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل تم اجراء اي جراحات للطفل ؟</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="41" name="41" class="custom-control-input">
+                                <label class="custom-control-label" for="41">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="42" name="41" class="custom-control-input">
+                                <label class="custom-control-label" for="42">لا</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder="  اذا كانت الاجابة نعم فما نوع الجراحة ؟ وما عمر الطفل عند اجرائها">
+
+
+                        </div>
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>هل توجد مشاكل خاصة بالسمع ؟ </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="43" name="43" class="custom-control-input">
+                                <label class="custom-control-label" for="43">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="44" name="43" class="custom-control-input">
+                                <label class="custom-control-label" for="44">لا</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder="  اذا كانت الاجابة نعم فما هي هذة المشاكل">
+
+
+                        </div>
+                        <div class="form-group col-md-2" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder="  ما اسم طبيب السمعيات  للسمع؟">
+
+
+                        </div>
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>  هل توجد مشاكل خاصة بالبصر ؟</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="45" name="45" value="yes" class="custom-control-input">
+                                <label class="custom-control-label" for="45">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="46" name="45" value="no" class="custom-control-input">
+                                <label class="custom-control-label" for="46">لا</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder=" اذا كانت نعم فما هي المشاكل؟">
+
+
+                        </div>
+
+
+                        <div class="form-group col-md-2" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder="  ما اسم طبيب العيون  للبصر؟">
+
+
+                        </div>
+
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>  هل توجد مشاكل خاصه بالحركة؟</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="50" name="50" value="yes" class="custom-control-input">
+                                <label class="custom-control-label" for="50">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="51" name="50" value="no" class="custom-control-input">
+                                <label class="custom-control-label" for="51">لا</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder=" اذا كانت نعم فما هي المشاكل؟">
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+                            <label>متي بداء في الجلوس ؟</label>
+                        </div>
+
+                        <div class="form-group col-md-7" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder=" بداء في الجلوس ">
+
+
+                        </div>
+
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+                            <label>متي بداء في المشي ؟</label>
+                        </div>
+
+                        <div class="form-group col-md-7" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder=" بداء المشي ">
+
+
+                        </div>
+
+
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+                            <label> هل يحصل الطفل علي جلسات علاج طبيعي بانتظام ؟وماعددالجلسات في الاسبوع؟</label>
+                        </div>
+
+                        <div class="form-group col-md-7" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder="جلسات علاج طبيعي">
+
+
+                        </div>
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>  هل الطفل يعاني من نوبان صرعيه؟</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="52" name="52" value="yes" class="custom-control-input">
+                                <label class="custom-control-label" for="52">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="53" name="52" value="no" class="custom-control-input">
+                                <label class="custom-control-label" for="53">لا</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder="ما اسم طبيب المخ والاعصاب المباشر للطفل؟">
+
+
+                        </div>
+
+
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+                            <label>متي بداء في نطق اول كلمه؟</label>
+                        </div>
+
+                        <div class="form-group col-md-7" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder=" بداء في الجلوس ">
+
+
+                        </div>
+
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+                            <label>هل يحصل علي جلسات تخاطب بانتظام ؟ وما عدد الجلسات في الاسبوع؟</label>
+                        </div>
+
+                        <div class="form-group col-md-7" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder=" بداء في الجلوس ">
+
+
+                        </div>
+
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+                            <label>كيف يتواصل الطفل مع الاخرين ؟هل من خلال السمع او البصر او اللمس؟</label>
+                        </div>
+
+                        <div class="form-group col-md-7" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder=" طريقه التواصل مع الاخرين ">
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+                </div>
+
+
+                <h3> مشاكل النطق والكلام</h3>
+                <div>
+                    <div class="form-row">
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>  هل الطفل يتواصل مع اخواته؟</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="54" name="54" value="yes" class="custom-control-input">
+                                <label class="custom-control-label" for="54">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="55" name="54" value="no" class="custom-control-input">
+                                <label class="custom-control-label" for="55">لا</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>  هل يطيع الاوامر البسيطة؟</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="56" name="56" value="yes" class="custom-control-input">
+                                <label class="custom-control-label" for="56">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="57" name="56" value="no" class="custom-control-input">
+                                <label class="custom-control-label" for="57">لا</label>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-md-7" style="margin-bottom:0">
+                            <label>  هل ينطق كلمات او يعبر بالاشارة؟</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="58" name="58" value="yes" class="custom-control-input">
+                                <label class="custom-control-label" for="58">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="59" name="58" value="no" class="custom-control-input">
+                                <label class="custom-control-label" for="59">لا</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label>  كم عدد الكلمات التي ينطقها او الاشارات؟ وماهي ؟  </label>
+<textarea class="form-control" id="" name="" role="1" rows="1" placeholder="    "></textarea>
+
+                        </div>
+
+
+
+                        <div class="form-group col-md-8" style="margin-bottom:0">
+                            <label>  هل ينطق جمال؟</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="60" name="60" value="yes" class="custom-control-input">
+                                <label class="custom-control-label" for="56">نعم</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="61" name="60" value="no" class="custom-control-input">
+                                <label class="custom-control-label" for="61">لا</label>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+                            <label>ما اسم طبيب التخاطب الخاص بالطفل</label>
+                        </div>
+
+                        <div class="form-group col-md-7" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder=" اسم طبيب ">
+
+
+                        </div>
+
+
+                        <div class="form-group col-md-5" style="margin-bottom:2px">
+                            <label>ما اسم اخصائي التخاطب القائم بجلسات الطفل ؟</label>
+                        </div>
+
+                        <div class="form-group col-md-7" style="margin-bottom:2px">
+
+                            <input type="text" class="form-control" id="" name="" placeholder=" اسم اخصائي  ">
+
+
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label>  ماالنشاط المفضل للطفل ؟  </label>
+<textarea class="form-control" id="" name="" role="2" rows="2" placeholder=" النشاط   "></textarea>
+
+                        </div>
+
+
+                        <div class="form-group col-md-12">
+                            <label>  ما اللعبه المضلة للطفي ؟ </label>
+<textarea class="form-control" id="" name="" role="2" rows="2" placeholder="   اللعبه "></textarea>
+
+                        </div>
+
+
+
+                        <div class="form-group col-md-12">
+                            <label>  هل يوجد معلومات اضافيه  ؟ </label>
+<textarea class="form-control" id="" name="" role="5" rows="5" placeholder="   معلومات اضافيه "></textarea>
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <br />
+
+
+        <div class="col-7" style="float:right">
+
+
+            @Html.ActionLink("الصفحه الرئيسه", "Index", null, new { @class = "btn btn-danger" })
+            <input type="submit" value=" حفظ البيانات" class="btn btn-primary" style="padding:7px 50px" />
+
+
+        </div>
+        <br />
+        <br />
+        <br />
+
+
+
+    </div>
+
+</form>
+
+
+@section Scripts {
+@Scripts.Render("~/bundles/jqueryval")
+}

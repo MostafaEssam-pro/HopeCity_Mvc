@@ -1,0 +1,48 @@
+﻿@model view_eye.Models.Test
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Test</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Doctors_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doctors_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patients_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patients_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnswersId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnswersId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
